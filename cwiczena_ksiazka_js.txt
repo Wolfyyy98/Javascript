@@ -1,0 +1,228 @@
+ //console.log(4 ** 2 * Math.PI);
+            //console.log(Math.log10(20 * 30 + 40));
+            //console.log(Math.log2(10 ** (-5)));
+            //console.log(Math.abs((-3) ** 7));
+//Zadanie z obiektów
+           // const user = {
+                //name: "Kuba",
+               // surname:"Wędrowycz",
+               // adress: {
+                    //country:"Polska",
+                    //city:"Stary Majdan",
+                    //postal:"22-120",
+                    //street:"null"
+                //}
+           // };
+            //const book = {
+                //title:"Karpie bijem",
+                //releaseDate:"2019"
+                //}
+            
+            //console.log(user.surname);
+            //user.name = "Jakub";
+            //console.log(user.adress.city);
+            //user.adress.street = "Bagnowska";
+            //console.log(book.releaseDate);
+
+            
+                //Zadanie z nazw uzytkownika
+           /* function makeUser(name) {
+                return {
+                    name: name,
+                    changeName: function(newName){
+                        this.name = newName;
+                    },
+                    sayHello: function(){
+                        console.log("Cześć, jestem " + this.name);
+                    }
+                };
+            }
+            const user1 = makeUser("Marcin");
+            const user2 = makeUser("Kamil");
+
+            user1.sayHello();
+            user2.sayHello();
+
+            user1.changeName("Piter");
+            user1.sayHello();
+            user2.sayHello(); */
+            // ZADANIE Z KONTA BANKOWEGO 1
+
+         /*   function makeBankAccount() {
+                return{
+                    balance: 0,
+                    deposit: function(value){
+                        this.balance += value;
+                        return this.balance;
+                    },
+                    witdraw: function(value){
+                        if(this.balance < value){
+                            value = this.balance;
+                        }
+                        this.balance -= value;
+                        return value;
+                    },
+                    currentBalance: function(){
+                        return this.balance;
+                    }
+                }
+            } 
+
+            const account = makeBankAccount();
+            console.log(account.currentBalance());
+
+            const balance = account.deposit(1000);
+            console.log(balance);
+            console.log(account.currentBalance());
+
+            const withdraw1 = account.witdraw(300);
+            console.log(withdraw1);
+            console.log(account.currentBalance());
+
+            const withdraw2 = account.witdraw(1500);
+            console.log(withdraw2);
+            console.log(account.currentBalance()); */
+           
+            // ZADANIE Z KONTA BANKOWEGO 2 - new
+         /* function BankAccount() {
+                    this.balance = 0,
+                    this.deposit = function(value){
+                        this.balance += value;
+                        return this.balance;
+                    };
+                    this.witdraw = function(value){
+                       value = Math.min(value, this.balance);
+                        this.balance -= value;
+                        return value;
+                    };
+                    this.currentBalance = function(){
+                        return this.balance;
+                    };
+            }
+
+            const account = new BankAccount();
+            console.log(account.currentBalance());
+
+            const balance = account.deposit(1000);
+            console.log(balance);
+            console.log(account.currentBalance());
+
+            const withdraw1 = account.witdraw(300);
+            console.log(withdraw1);
+            console.log(account.currentBalance());
+
+            const withdraw2 = account.witdraw(1500);
+            console.log(withdraw2);
+            console.log(account.currentBalance()); */
+
+            // ZADANIE Z KONTA BANKOWEGO 3 - class
+          /*  class BankAccount {
+                constructor(){
+                    this.balance = 0;
+                }
+                    deposit(value){
+                        this.balance += value;
+                        return this.balance;
+                    };
+                    witdraw(value){
+                       value = Math.min(value, this.balance);
+                        this.balance -= value;
+                        return value;
+                    };
+                    currentBalance(){
+                        return this.balance;
+                    };
+            }
+
+            const account = new BankAccount();
+            console.log(account.currentBalance());
+
+            const balance = account.deposit(1000);
+            console.log(balance);
+            console.log(account.currentBalance());
+
+            const withdraw1 = account.witdraw(300);
+            console.log(withdraw1);
+            console.log(account.currentBalance());
+
+            const withdraw2 = account.witdraw(1500);
+            console.log(withdraw2);
+            console.log(account.currentBalance()); */
+//Zadanka z for each
+           /* function printAllValues(item){
+            item.forEach(function(item, index){
+                console.log("Na pozycji " + index + " znajduje się " + item + " ");
+            });
+        }
+            printAllValues(["Banan", null, 2, undefined]);*/
+
+            /*function sumAll(numbers){
+            let sum = 0;
+            numbers.forEach(function (item){
+                sum += item;
+            });
+            return sum;
+        }
+            console.log(sumAll([11, 22, 33])); */
+
+            //Zadanko z map
+           /*function toFullNames(users){
+            return users.map(function (user){
+                if(user.secondName) {
+                    return (user.firstName + " " + user.secondName + " " + user.lastName)
+                }
+                else{
+                    return user.firstName + ", " + user.lastName
+                }
+            });
+        }
+
+            const users = [
+                {firstName: "Turanga", lastName: "Leela"},
+                {firstName: "Amy", lastName: "Wong"},
+                {
+                    firstName: "Philip",
+                    secondName: "Jay",
+                    lastName: "Fry"
+                },
+                {
+                    firstName: "Bender",
+                    secondName: "Bending",
+                    lastName: "Rodriguez"
+                },
+            ];
+
+            const fullNames = toFullNames(users);
+            fullNames.forEach(function (name) {
+                console.log(name);
+            });*/
+
+            //Funkcje strzałkowe 1
+          /*  const students = [
+                {name: "Marian", score: 4.51, points: 19},
+                {name: "Ania", score: 4.23, points: 21},
+                {name: "Ala", score: 3.21, points: 21},
+                {name: "Kasia", score: 3.77, points: 32},
+                {name: "Józef", score: 4.21, points: 22},
+                {name: "Rafał", score: 4.43, points: 23},
+
+                
+            ];
+
+            const list = students
+            .filter (s => s.score >= 3.5)
+            .filter (s => s.points >= 20)
+            .map (s => s.name + ", " + s.score)
+            .forEach (str => console.log(str)); */
+        // Funckje strzałkowe 2
+           /* times = a, b => a * b;
+            copmareScoresDescending = s1, s2 => s2.score - s1.score;
+            compareNames = s1, s2 =>{
+                if(s1.name < s2.name){
+                    -1;
+                }
+                if (s1.name > s2.name){
+                    1;
+                }
+                0;
+            } */
